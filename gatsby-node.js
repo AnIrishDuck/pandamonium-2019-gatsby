@@ -30,7 +30,7 @@ exports.onCreatePage = ({ page, actions }) => {
 // Create pages from markdown nodes
 exports.createPages = ({ actions, createNodeId, graphql }) => {
   const { createPage, createNode } = actions;
-  const blogPostTemplate = path.resolve(`src/templates/slide.js`);
+  const slideTemplate = path.resolve(`src/templates/slide.js`);
 
   return graphql(`
     {
@@ -48,10 +48,21 @@ exports.createPages = ({ actions, createNodeId, graphql }) => {
       return Promise.reject(result.errors);
     }
 
+    const transform = (html) => {
+      if (html.includes('iframe:')) {
+        const replaced = html.replace(/iframe:([^ <>]*)/, `
+          <iframe src="$1" width=800 height=500 />
+        `)
+        return replaced
+      } else {
+        return html
+      }
+    }
+
     const slides = result.data.allMarkdownRemark.edges;
     slides.sort((a, b) => a.node.fileAbsolutePath > b.node.fileAbsolutePath ? 1 : -1)
     const nodes = slides.flatMap((s) => s.node.html.split('<hr>').map((html) => ({
-      node: s.node, html
+      node: s.node, html: transform(html)
     })))
 
     nodes.forEach(({ node, html }, index) => {
@@ -76,10 +87,9 @@ exports.createPages = ({ actions, createNodeId, graphql }) => {
     nodes.forEach((slide, index) => {
       createPage({
         path: `/${index + 1}`,
-        component: blogPostTemplate,
+        component: slideTemplate,
         context: {
           index: index + 1,
-          absolutePath: process.cwd() + `/src/slides#${index + 1}`,
         },
       });
     });
