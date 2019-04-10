@@ -5,7 +5,7 @@ import Wrapper from '../components/wrapper'
 export default ({ data, transition }) => (
   <Wrapper index={data.slide.index}>
     <div
-      style={transition && transition.style}
+      style={{...(transition && transition.style), width: '100%'}}
       dangerouslySetInnerHTML={{ __html: data.slide.html }}
     />
   </Wrapper>

@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     name: `Frank Murphy`,
     title: `Static Site Generation with Gatsby`,
-    date: `2019-Apr-12`,
+    date: `2019-Apr-11`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

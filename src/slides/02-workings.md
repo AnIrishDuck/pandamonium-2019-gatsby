@@ -1,3 +1,7 @@
+# Gatsby in Sixty Seconds
+
+---
+
 # The Life and Death of a Gatsby Site
 
 * Bootstrapping
@@ -51,7 +55,6 @@ query SlideQuery {
   }
 }
 
-TODO: figure out allSlide magic
 -->
 
 ---
@@ -91,6 +94,7 @@ https://www.gatsbyjs.org/docs/deploying-and-hosting/
 <!--
 There are lots of backend plugins for deploying Gatsby sites to everything
 under the sun.
+
 -->
 
 ---
@@ -116,4 +120,4 @@ This is literally all the configuration I needed for the eng blog concept
 npm run deploy
 ```
 
-<!-- and this is all I need to do to deploy -->
+<!-- This is all we need to run to deploy. (deploy 60s demo here) -->

@@ -1,20 +1,26 @@
 # Static Site Generation with Gatsby
+#### Instructure / Engineering / Outcomes / @fmurphy
 
 <!--
-gatsby:
-what is it?
-where is it used?
-why should you want to use it?
-how does it work?
+Gatsby:
+What is it?
+Where is it used?
+Why should you want to use it?
+How does it work?
+
+After answering all these questions, I'll share my personal experience with
+Gatsby.
+
 -->
 
 ---
 
-## Who is Gatsby?
+# Who is Gatsby?
 
 ---
 
-An enigmatic millionaire that laundered money for prohibition gangsters...
+
+![An enigmatic millionaire that laundered money for prohibition gangsters...](./the-great-gatsby.jpg)
 
 <!--
 The Great Gatsby is actually one of my favorite books.
@@ -26,15 +32,21 @@ Gatsby is going to help.
 ---
 
 # What is Gatsby?
-## A Static Site Generation Framework
 
 ---
 
 > Can't repeat the past? ...Why of course you can!
 > <cite>F. Scott Fitzgerald</cite>
 
+---
+
+## A New Spin on an Old Idea
+
+![jekyll](./jekyll.png)
+![hugo](./hugo.png)
+
 <!--
-contrast gatsby with jekyll:
+contrast gatsby with jekyll / hugo:
 
 - unified language on frontend and backend
 - tooling web developers are already familiar with
@@ -44,22 +56,48 @@ contrast gatsby with jekyll:
 
 ## A Static Site Generation Framework
 
-* React
-* Webpack
 * GraphQL
+* Webpack
+* React
 
 <!--
+Gatsby uses these technologies to generate static sites:
+
+- GraphQL ingests and organizes data.
+- Webpack generates and optimizes the end bundle.
+- React converts data into HTML.
+
 These probably look really familiar.
-If you're a web developer, you've probably worked with most if not all of
-these technologies before
+
+This is a large part of how Gatsby saves time: it bundles together technologies
+that you probably already know.
 -->
 
 ---
+
+## A Website Compiler
+
+![ugly gui website compiler](./website-compiler.jpg)
+
+<!--
+Gatsby markets itself as a "website compiler". Its goal is to give developers
+high-level, declarative tools to define what a site should "look like", so it
+can implement more and more optimizations to make the site load faster.
+
+This is the second way Gatsby promises to save time. Its focus is on making
+blazing-fast static sites.
+-->
+
+---
+
 ## Where is it Used?
 
 https://www.gatsbyjs.org/
 
 <!--
+Gatsby eats its own dog food. Its site has tons of great documentation and
+references to the wider community.
+
 We'll talk about the plugin ecosystem more in a bit.
 -->
 
@@ -67,23 +105,38 @@ We'll talk about the plugin ecosystem more in a bit.
 
 ## Where is it Used?
 
+https://reactjs.org/
+
+<!--
+React now uses it for its official site and documentation.
+
+-->
+
+---
+
+## Where ... might it be used?
+
+https://instructure.design
 http://inst-eng-blog.s3-website-us-west-2.amazonaws.com/
 
 <!--
-I did a proof-of-concept refresh of our eng blog last hack week.
+There's lots of opportunities for using Gatsby internally. I've heard the
+inst-ui team is looking into it for our ui docs. This sounds like a great idea.
 
-I honestly spent more time with non-technical issues then putting this together.
-Gatsby made it super fast.
+I'm also currently working on porting our current engineering blog over to
+Gatsby. If you're interested in that, reach out to me after this or via Slack.
 
-If you want to talk more about that ....
 -->
 
 ---
 ## ... Slide Decks
 
 <!--
-I'm a bit of a masochist. Downloading iMovie was too much of a pain for me,
-so I piece together my hack week videos using artisan-ally crafted commands
+If you haven't figured it out by now, this entire presentation was put together
+using Gatsby.
+
+I'm a DIY guy. I decided downloading iMovie was too much trouble. How hard
+could it be to just stitch together some clips via ffmpeg, I foolishly thought?
 -->
 
 ---
@@ -100,7 +153,9 @@ ffmpeg -f concat -i catlist.txt final.mp4
 ```
 
 <!--
-I also, for a very long time, have built my presentations using html.
+It's hard. I literally have to save my bash history every time I do this,
+otherwise I'd forget it next time. I probably should use iMovie at this point,
+but I'm too stubborn.
 -->
 
 ---
@@ -110,14 +165,6 @@ I also, for a very long time, have built my presentations using html.
 I know it sounds crazy, and when I was editing raw HTML it really was.
 But Gatsby has been a lifesaver for this stuff, even though it's bleeding edge
 and has cut me from time to time.
--->
-
----
-## Embeds
-`iframe:https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11812.492973261602!2d-83.7730228!3d42.2545406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1552683864784`
-
-<!--
-It lets you do cool stuff like embed google maps...
 -->
 
 ---
